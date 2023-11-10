@@ -9,21 +9,43 @@ import UIKit
 
 class CutomItemViewController: UIViewController {
 
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    let list = MaterialColorDataSource.generateSingleSectionData()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        collectionView.delegate = self
+        collectionView.dataSource = self
     }
     
+}
 
-    /*
-    // MARK: - Navigation
+extension CutomItemViewController: UICollectionViewDelegate { }
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension CutomItemViewController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        list.count
     }
-    */
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCell", for: indexPath) as! CustomCell
+        cell.colorView.backgroundColor = list[indexPath.item].color
+        cell.hexLabel.text = list[indexPath.item].hex
+        cell.nameLabel.text = list[indexPath.item].title
+        
+        return cell
+    }
+    
+}
 
+extension CutomItemViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let bounds = collectionView.bounds
+        let width = bounds.width
+        return CGSize(width: width, height: 85)
+    }
+    
 }
