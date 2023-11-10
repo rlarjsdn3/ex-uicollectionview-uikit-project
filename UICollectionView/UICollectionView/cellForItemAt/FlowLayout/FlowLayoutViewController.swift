@@ -22,7 +22,11 @@ class FlowLayoutViewController: UIViewController {
     }
     
     @IBAction func toggleButtonPressed(_ sender: UIBarButtonItem) {
-        
+        // ⭐️ 여러 추가・삭제・이동 연산을 배치 방식으로 애니메이션으로 동작하게 함.
+        collectionView.performBatchUpdates {
+            let flowLayout = (collectionView.collectionViewLayout as! UICollectionViewFlowLayout)
+            flowLayout.scrollDirection = flowLayout.scrollDirection == .horizontal ? .vertical : .horizontal
+        }
     }
     
     func configureLayout() {
@@ -39,7 +43,7 @@ class FlowLayoutViewController: UIViewController {
         // ⭐️ 아이템을 스크롤 방향 간격 설정
         layout.minimumLineSpacing = 5.0
         // ⭐️ 섹션 패딩 값 설정
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 5, bottom: 5, right: 5)
+        layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         
         return layout
     }
@@ -72,10 +76,13 @@ extension FlowLayoutViewController: UICollectionViewDelegateFlowLayout {
     
     // ⭐️ 델리게이트 메서드 호출 순서
     // #1 → #4 → #2 → #3
-    // 주의해야 할 점은 FlowLayout 구성에 필요한 값(InterItem, LineSpacing 등)은 아래 델리게이트 메서드로부터 가져오는 게 아닌 collectionViewLayout에서 곧바로 가져옴!
-    // 따라서, 값을 필요로 하는 경우, 직접 델리게이트 메서드를 호출하거나, 미리 UICollectionViewFlowLayout 객체에 값을 설정해놔야 함.
     
-    // 아래 예제에서는 미리 UICollectionViewFlowLayout 객체에 값을 설정해놨으므로, 별도 델리게이트 메서드를 필요 없음.
+    // FlowLayout 구성에 필요한 값(InterItem, LineSpacing 등)은 두 가지 방법으로 가져올 수 있음.
+    // ①: UICollectionViewFlowLayout 객체에서 미리 설정된 값을 가져오는 방법
+    // ②: 관련 델리게이트 메서드를 호출해 설정된 값을 가져오는 방법
+    
+    // 아래 예제에서는 FlowLayout 구성에 필요한 값(InterItem, LineSpacing 등)은 UICollectionViewFlowLayout 객체에서 가져옴.
+    // 그러므로, 별도 델리게이트 메서드가 필요 없음.
     
     // ⭐️ 플로우 레이아웃에서 각 아이템의 크기를 계산해서 반환하는 델리게이트 메서드
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -89,24 +96,26 @@ extension FlowLayoutViewController: UICollectionViewDelegateFlowLayout {
         
         // 내비게이션 탑바 영역을 뺀 컬렉션 뷰의 가로・세로 값 구하기
         var bounds = collectionView.bounds
-        // ❗️ bounds.origin.y 값이 -149인 이유: 상위 뷰 입장에서 컬렉션 뷰를 바라볼 때, y좌표가 -149 위치에서 시작하기 때문임. (다시 확인 필요)
+        // ❗️ bounds.origin.y 값이 -149인 이유: 상위 뷰 입장에서 컬렉션 뷰를 바라볼 때, y좌표가 -149 위치에서 시작하기 때문임.
         bounds.size.height += bounds.origin.y
         
         // 섹션 패딩 값을 뺀 실질적인 컬렉션 뷰의 가로・세로 값 구하기
-        var width = (bounds.width - (flowLayout.sectionInset.left + flowLayout.sectionInset.right))
-        var height = (bounds.height - (flowLayout.sectionInset.top + flowLayout.sectionInset.bottom))
+        var width = bounds.width - (flowLayout.sectionInset.left + flowLayout.sectionInset.right)
+        var height = bounds.height - (flowLayout.sectionInset.top + flowLayout.sectionInset.bottom)
         
         switch flowLayout.scrollDirection {
-        case.vertical:
+        case .vertical:
             height = (height - (flowLayout.minimumLineSpacing * 4)) / 5
             
             if indexPath.item > 0 {
                 width = (width - (flowLayout.minimumInteritemSpacing * 2)) / 3
             }
         case .horizontal:
-            width = (width - (flowLayout.minimumLineSpacing * 2) / 3)
-        default:
-            break
+            width = (width - (flowLayout.minimumLineSpacing * 2)) / 3
+            
+            if indexPath.item > 0 {
+                height = (height - (flowLayout.minimumInteritemSpacing * 4)) / 5
+            }
         }
         
         return CGSize(width: width.rounded(.down), height: height.rounded(.down))

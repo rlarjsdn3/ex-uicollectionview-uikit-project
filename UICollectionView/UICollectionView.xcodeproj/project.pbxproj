@@ -93,7 +93,7 @@
 				9EF4E3592AFCB1BE00CE17B7 /* Main.storyboard */,
 				9EF4E3FF2AFDF60D00CE17B7 /* Models */,
 				9EF4E3672AFCB21E00CE17B7 /* cellForItemAt */,
-				9EF4E3712AFCB29300CE17B7 /* CompositionalLayout */,
+				9EF4E3712AFCB29300CE17B7 /* DiffableDataSource */,
 				9EF4E35C2AFCB1BF00CE17B7 /* Assets.xcassets */,
 				9EF4E35E2AFCB1BF00CE17B7 /* LaunchScreen.storyboard */,
 				9EF4E3612AFCB1BF00CE17B7 /* Info.plist */,
@@ -188,11 +188,11 @@
 			path = Prefetching;
 			sourceTree = "<group>";
 		};
-		9EF4E3712AFCB29300CE17B7 /* CompositionalLayout */ = {
+		9EF4E3712AFCB29300CE17B7 /* DiffableDataSource */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = CompositionalLayout;
+			path = DiffableDataSource;
 			sourceTree = "<group>";
 		};
 		9EF4E3FF2AFDF60D00CE17B7 /* Models */ = {

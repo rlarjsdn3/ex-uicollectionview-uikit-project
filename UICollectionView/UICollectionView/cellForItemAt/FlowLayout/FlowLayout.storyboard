@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CBn-Tf-NYi">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Oz4-L9-nd2">
                                     <size key="itemSize" width="128" height="128"/>
@@ -41,7 +41,7 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="CBn-Tf-NYi" secondAttribute="bottom" id="E56-cW-bDQ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="CBn-Tf-NYi" secondAttribute="bottom" id="E56-cW-bDQ"/>
                             <constraint firstItem="CBn-Tf-NYi" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="ern-Am-k5f"/>
                             <constraint firstItem="CBn-Tf-NYi" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="tqc-cp-arg"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="CBn-Tf-NYi" secondAttribute="trailing" id="wUp-oP-32J"/>
@@ -63,7 +63,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="877" y="-2"/>
+            <point key="canvasLocation" x="875.57251908396938" y="-2.1126760563380285"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Nwn-tW-M5k">
