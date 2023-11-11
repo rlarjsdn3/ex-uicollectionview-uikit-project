@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E0F9A4F2AFF8BE500799424 /* Reordering.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E0F9A4E2AFF8BE400799424 /* Reordering.storyboard */; };
+		9E0F9A512AFF8BF100799424 /* ReorderingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0F9A502AFF8BF100799424 /* ReorderingViewController.swift */; };
+		9E0F9A532AFF91AC00799424 /* HeaderEditingCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0F9A522AFF91AC00799424 /* HeaderEditingCollectionReusableView.swift */; };
 		9E29F8702AFE74130035E8D2 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E29F86F2AFE74130035E8D2 /* CustomCell.swift */; };
 		9E29F8722AFE7B9A0035E8D2 /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E29F8712AFE7B9A0035E8D2 /* HeaderCollectionReusableView.swift */; };
 		9E29F8742AFE7DA10035E8D2 /* FooterCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E29F8732AFE7DA10035E8D2 /* FooterCollectionReusableView.swift */; };
@@ -35,6 +38,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9E0F9A4E2AFF8BE400799424 /* Reordering.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Reordering.storyboard; sourceTree = "<group>"; };
+		9E0F9A502AFF8BF100799424 /* ReorderingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReorderingViewController.swift; sourceTree = "<group>"; };
+		9E0F9A522AFF91AC00799424 /* HeaderEditingCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderEditingCollectionReusableView.swift; sourceTree = "<group>"; };
 		9E29F86F2AFE74130035E8D2 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		9E29F8712AFE7B9A0035E8D2 /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		9E29F8732AFE7DA10035E8D2 /* FooterCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterCollectionReusableView.swift; sourceTree = "<group>"; };
@@ -75,6 +81,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9E0F9A4D2AFF8BD800799424 /* Reordering */ = {
+			isa = PBXGroup;
+			children = (
+				9E0F9A4E2AFF8BE400799424 /* Reordering.storyboard */,
+				9E0F9A502AFF8BF100799424 /* ReorderingViewController.swift */,
+			);
+			path = Reordering;
+			sourceTree = "<group>";
+		};
 		9EF4E3472AFCB1BD00CE17B7 = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +132,7 @@
 				9EF4E36D2AFCB25600CE17B7 /* SupplementaryView */,
 				9EF4E36E2AFCB25D00CE17B7 /* Selection */,
 				9EF4E36F2AFCB26300CE17B7 /* Editing */,
+				9E0F9A4D2AFF8BD800799424 /* Reordering */,
 				9EF4E3702AFCB26800CE17B7 /* Prefetching */,
 			);
 			path = cellForItemAt;
@@ -184,6 +200,7 @@
 			children = (
 				9EF4E3922AFCB31A00CE17B7 /* Editing.storyboard */,
 				9EF4E3802AFCB2E700CE17B7 /* EditingViewController.swift */,
+				9E0F9A522AFF91AC00799424 /* HeaderEditingCollectionReusableView.swift */,
 			);
 			path = Editing;
 			sourceTree = "<group>";
@@ -275,6 +292,7 @@
 				9EF4E3932AFCB31A00CE17B7 /* Editing.storyboard in Resources */,
 				9EF4E3602AFCB1BF00CE17B7 /* LaunchScreen.storyboard in Resources */,
 				9EF4E38D2AFCB30900CE17B7 /* SelfSizing.storyboard in Resources */,
+				9E0F9A4F2AFF8BE500799424 /* Reordering.storyboard in Resources */,
 				9EF4E3872AFCB2F700CE17B7 /* FlowLayout.storyboard in Resources */,
 				9EF4E3852AFCB2F000CE17B7 /* Basic.storyboard in Resources */,
 				9EF4E3952AFCB32000CE17B7 /* Prefetching.storyboard in Resources */,
@@ -302,8 +320,10 @@
 				9EF4E37F2AFCB2E200CE17B7 /* SelectionViewController.swift in Sources */,
 				9EF4E37D2AFCB2DD00CE17B7 /* SupplementaryViewController.swift in Sources */,
 				9EF4E3832AFCB2EB00CE17B7 /* PrefetchingViewController.swift in Sources */,
+				9E0F9A532AFF91AC00799424 /* HeaderEditingCollectionReusableView.swift in Sources */,
 				9EF4E3732AFCB2BA00CE17B7 /* BasicViewController.swift in Sources */,
 				9E29F8702AFE74130035E8D2 /* CustomCell.swift in Sources */,
+				9E0F9A512AFF8BF100799424 /* ReorderingViewController.swift in Sources */,
 				9EF4E3562AFCB1BE00CE17B7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
