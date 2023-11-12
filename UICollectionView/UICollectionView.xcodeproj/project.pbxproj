@@ -17,6 +17,8 @@
 		9E29F8742AFE7DA10035E8D2 /* FooterCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E29F8732AFE7DA10035E8D2 /* FooterCollectionReusableView.swift */; };
 		9E60DB512B0075D20060CD62 /* SecondaryFlowLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E60DB502B0075D20060CD62 /* SecondaryFlowLayoutViewController.swift */; };
 		9E60DB532B0083EB0060CD62 /* CompositionalLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E60DB522B0083EB0060CD62 /* CompositionalLayoutViewController.swift */; };
+		9E60DB552B0096AE0060CD62 /* MyHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E60DB542B0096AE0060CD62 /* MyHeaderView.swift */; };
+		9E60DB572B0098290060CD62 /* HeaderRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E60DB562B0098290060CD62 /* HeaderRegistrationViewController.swift */; };
 		9E6C0E4D2AFFC3BC00D84AE5 /* CellRegistration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E6C0E4C2AFFC3BC00D84AE5 /* CellRegistration.storyboard */; };
 		9E6C0E4F2AFFC3C200D84AE5 /* UpdateHandler.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E6C0E4E2AFFC3C200D84AE5 /* UpdateHandler.storyboard */; };
 		9E6C0E512AFFC3D200D84AE5 /* SecondFlowLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E6C0E502AFFC3D200D84AE5 /* SecondFlowLayout.storyboard */; };
@@ -64,6 +66,8 @@
 		9E29F8732AFE7DA10035E8D2 /* FooterCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterCollectionReusableView.swift; sourceTree = "<group>"; };
 		9E60DB502B0075D20060CD62 /* SecondaryFlowLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryFlowLayoutViewController.swift; sourceTree = "<group>"; };
 		9E60DB522B0083EB0060CD62 /* CompositionalLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionalLayoutViewController.swift; sourceTree = "<group>"; };
+		9E60DB542B0096AE0060CD62 /* MyHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHeaderView.swift; sourceTree = "<group>"; };
+		9E60DB562B0098290060CD62 /* HeaderRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderRegistrationViewController.swift; sourceTree = "<group>"; };
 		9E6C0E4C2AFFC3BC00D84AE5 /* CellRegistration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CellRegistration.storyboard; sourceTree = "<group>"; };
 		9E6C0E4E2AFFC3C200D84AE5 /* UpdateHandler.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UpdateHandler.storyboard; sourceTree = "<group>"; };
 		9E6C0E502AFFC3D200D84AE5 /* SecondFlowLayout.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SecondFlowLayout.storyboard; sourceTree = "<group>"; };
@@ -168,6 +172,8 @@
 			isa = PBXGroup;
 			children = (
 				9E6C0E542AFFC3E000D84AE5 /* HeaderRegistration.storyboard */,
+				9E60DB562B0098290060CD62 /* HeaderRegistrationViewController.swift */,
+				9E60DB542B0096AE0060CD62 /* MyHeaderView.swift */,
 			);
 			path = "Header Registration";
 			sourceTree = "<group>";
@@ -453,6 +459,7 @@
 				9EF4E3812AFCB2E700CE17B7 /* EditingViewController.swift in Sources */,
 				9EF4E3FE2AFDF60900CE17B7 /* MaterialColorDataSource.swift in Sources */,
 				9E29F8722AFE7B9A0035E8D2 /* HeaderCollectionReusableView.swift in Sources */,
+				9E60DB552B0096AE0060CD62 /* MyHeaderView.swift in Sources */,
 				9EF4E37B2AFCB2D300CE17B7 /* SelfSizingViewController.swift in Sources */,
 				9EF4E37F2AFCB2E200CE17B7 /* SelectionViewController.swift in Sources */,
 				9EF4E37D2AFCB2DD00CE17B7 /* SupplementaryViewController.swift in Sources */,
@@ -468,6 +475,7 @@
 				9E0F9A512AFF8BF100799424 /* ReorderingViewController.swift in Sources */,
 				9E6C0E612AFFC7FF00D84AE5 /* FoodCell.swift in Sources */,
 				9E0F9A552AFFB65200799424 /* Landscape.swift in Sources */,
+				9E60DB572B0098290060CD62 /* HeaderRegistrationViewController.swift in Sources */,
 				9EF4E3562AFCB1BE00CE17B7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
