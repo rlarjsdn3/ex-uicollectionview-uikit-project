@@ -36,7 +36,8 @@ class HeaderRegistrationViewController: UIViewController {
         
         // ⭐️ 컬렉션 뷰에 Supplementary View 등록
         let headerRegistration = UICollectionView.SupplementaryRegistration<MyHeaderView>(elementKind: UICollectionView.elementKindSectionHeader) { headerView, kind, indexPath in
-            headerView.pictureView.image = UIImage(named: "gradientTop")
+            headerView.backgroundColor = UIColor.systemGray5
+            headerView.pictureView.image = UIImage(systemName: "clock")
             headerView.textView.text = "My Food"
         }
         
@@ -85,9 +86,11 @@ class HeaderRegistrationViewController: UIViewController {
             elementKind: UICollectionView.elementKindSectionHeader,
             alignment: .top
         )
+        sectionHeader.pinToVisibleBounds = true
         section.boundarySupplementaryItems = [sectionHeader]
         
         let layout = UICollectionViewCompositionalLayout(section: section)
+        
         return layout
     }
 

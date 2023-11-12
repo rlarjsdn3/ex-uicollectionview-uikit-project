@@ -18,17 +18,18 @@ class MyHeaderView: UICollectionReusableView {
         pictureView.contentMode = .scaleAspectFill
         self.addSubview(pictureView)
         
-        pictureView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        pictureView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        pictureView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        pictureView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        pictureView.topAnchor.constraint(equalTo: self.topAnchor, constant: 8.0).isActive = true
+        pictureView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -8.0).isActive = true
+        pictureView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16.0).isActive = true
+        pictureView.widthAnchor.constraint(equalTo: pictureView.heightAnchor, multiplier: 1.0).isActive = true
         
         textView.translatesAutoresizingMaskIntoConstraints = false
-        textView.font = UIFont.preferredFont(forTextStyle: .title1)
+        textView.font = UIFont.preferredFont(forTextStyle: .title2)
         self.addSubview(textView)
         
-        textView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        textView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        textView.topAnchor.constraint(equalTo: self.topAnchor, constant: 8.0).isActive = true
+        textView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -8.0).isActive = true
+        textView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16.0).isActive = true
     }
     
     required init?(coder: NSCoder) {
