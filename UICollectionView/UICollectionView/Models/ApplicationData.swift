@@ -7,6 +7,10 @@
 
 import UIKit
 
+enum SelectedSections {
+    case selected, available
+}
+
 enum Sections {
     case main
 }
@@ -28,6 +32,7 @@ class ItemsData: Identifiable {
 
 struct ApplicationData {
     var dataSource: UICollectionViewDiffableDataSource<Sections, ItemsData.ID>!
+    var dataSelectedSource: UICollectionViewDiffableDataSource<SelectedSections, ItemsData.ID>!
     
     var items: [ItemsData] = [] {
         didSet {

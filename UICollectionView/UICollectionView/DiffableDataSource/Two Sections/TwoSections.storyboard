@@ -9,28 +9,28 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Sections View Controller-->
+        <!--Two Sections View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="SectionsViewController" customModule="UICollectionView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Y6W-OH-hqX" customClass="TwoSectionsViewController" customModule="UICollectionView" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1hO-Ww-WWW">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="X57-1T-2MI">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="FBj-hT-RDL">
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="W32-P1-nmo">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="owg-rc-FqX">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="zGT-hS-0Wv">
                                         <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="BbK-4X-bvU">
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Brf-Ss-nZ7">
                                             <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
@@ -41,19 +41,19 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="1hO-Ww-WWW" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="2bP-Ae-Ib5"/>
-                            <constraint firstItem="1hO-Ww-WWW" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="PPU-i1-6sV"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="1hO-Ww-WWW" secondAttribute="trailing" id="Y9B-cL-fBz"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="1hO-Ww-WWW" secondAttribute="bottom" id="zKW-xf-o1b"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="X57-1T-2MI" secondAttribute="trailing" id="ags-wc-sIi"/>
+                            <constraint firstItem="X57-1T-2MI" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="eFi-0V-eQR"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="X57-1T-2MI" secondAttribute="bottom" id="pLm-1j-2nM"/>
+                            <constraint firstItem="X57-1T-2MI" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="r3Z-db-L3Y"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="collectionView" destination="1hO-Ww-WWW" id="0lr-OI-D5l"/>
+                        <outlet property="collectionView" destination="X57-1T-2MI" id="8fT-jP-rGZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138.1679389312977" y="-2.1126760563380285"/>
+            <point key="canvasLocation" x="20.610687022900763" y="-2.1126760563380285"/>
         </scene>
     </scenes>
     <resources>

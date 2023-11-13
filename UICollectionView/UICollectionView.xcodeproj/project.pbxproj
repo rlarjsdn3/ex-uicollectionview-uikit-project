@@ -12,6 +12,10 @@
 		9E0F9A532AFF91AC00799424 /* HeaderEditingCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0F9A522AFF91AC00799424 /* HeaderEditingCollectionReusableView.swift */; };
 		9E0F9A552AFFB65200799424 /* Landscape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0F9A542AFFB65200799424 /* Landscape.swift */; };
 		9E0F9A572AFFBD8E00799424 /* ApplicationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0F9A562AFFBD8E00799424 /* ApplicationData.swift */; };
+		9E1766042B01C003000B2121 /* ApplicationSectionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1766032B01C003000B2121 /* ApplicationSectionData.swift */; };
+		9E1766062B01C023000B2121 /* SectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1766052B01C023000B2121 /* SectionsViewController.swift */; };
+		9E17660B2B01C9D0000B2121 /* TwoSections.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E17660A2B01C9D0000B2121 /* TwoSections.storyboard */; };
+		9E17660D2B01C9DF000B2121 /* TwoSectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E17660C2B01C9DF000B2121 /* TwoSectionsViewController.swift */; };
 		9E29F8702AFE74130035E8D2 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E29F86F2AFE74130035E8D2 /* CustomCell.swift */; };
 		9E29F8722AFE7B9A0035E8D2 /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E29F8712AFE7B9A0035E8D2 /* HeaderCollectionReusableView.swift */; };
 		9E29F8742AFE7DA10035E8D2 /* FooterCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E29F8732AFE7DA10035E8D2 /* FooterCollectionReusableView.swift */; };
@@ -61,6 +65,10 @@
 		9E0F9A522AFF91AC00799424 /* HeaderEditingCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderEditingCollectionReusableView.swift; sourceTree = "<group>"; };
 		9E0F9A542AFFB65200799424 /* Landscape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Landscape.swift; sourceTree = "<group>"; };
 		9E0F9A562AFFBD8E00799424 /* ApplicationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationData.swift; sourceTree = "<group>"; };
+		9E1766032B01C003000B2121 /* ApplicationSectionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationSectionData.swift; sourceTree = "<group>"; };
+		9E1766052B01C023000B2121 /* SectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionsViewController.swift; sourceTree = "<group>"; };
+		9E17660A2B01C9D0000B2121 /* TwoSections.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TwoSections.storyboard; sourceTree = "<group>"; };
+		9E17660C2B01C9DF000B2121 /* TwoSectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoSectionsViewController.swift; sourceTree = "<group>"; };
 		9E29F86F2AFE74130035E8D2 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		9E29F8712AFE7B9A0035E8D2 /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		9E29F8732AFE7DA10035E8D2 /* FooterCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterCollectionReusableView.swift; sourceTree = "<group>"; };
@@ -130,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				9E6C0E562AFFC3E400D84AE5 /* Sections.storyboard */,
+				9E1766052B01C023000B2121 /* SectionsViewController.swift */,
 			);
 			path = Sections;
 			sourceTree = "<group>";
@@ -166,6 +175,15 @@
 				9E0F9A592AFFC20000799424 /* Hierarchical List */,
 			);
 			path = List;
+			sourceTree = "<group>";
+		};
+		9E1766092B01C9BB000B2121 /* Two Sections */ = {
+			isa = PBXGroup;
+			children = (
+				9E17660A2B01C9D0000B2121 /* TwoSections.storyboard */,
+				9E17660C2B01C9DF000B2121 /* TwoSectionsViewController.swift */,
+			);
+			path = "Two Sections";
 			sourceTree = "<group>";
 		};
 		9E6C0E462AFFC37200D84AE5 /* Header Registration */ = {
@@ -349,6 +367,7 @@
 				9E6C0E472AFFC37C00D84AE5 /* CompositionalLayout */,
 				9E6C0E462AFFC37200D84AE5 /* Header Registration */,
 				9E0F9A582AFFC1F300799424 /* Sections */,
+				9E1766092B01C9BB000B2121 /* Two Sections */,
 			);
 			path = DiffableDataSource;
 			sourceTree = "<group>";
@@ -359,6 +378,7 @@
 				9E0F9A542AFFB65200799424 /* Landscape.swift */,
 				9EF4E3FD2AFDF60900CE17B7 /* MaterialColorDataSource.swift */,
 				9E0F9A562AFFBD8E00799424 /* ApplicationData.swift */,
+				9E1766032B01C003000B2121 /* ApplicationSectionData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -421,6 +441,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E17660B2B01C9D0000B2121 /* TwoSections.storyboard in Resources */,
 				9EF4E38F2AFCB31100CE17B7 /* SupplementaryView.storyboard in Resources */,
 				9EF4E38B2AFCB30300CE17B7 /* CustomItem.storyboard in Resources */,
 				9EF4E3932AFCB31A00CE17B7 /* Editing.storyboard in Resources */,
@@ -456,6 +477,7 @@
 				9EF4E3752AFCB2BF00CE17B7 /* FlowLayoutViewController.swift in Sources */,
 				9EF4E3542AFCB1BE00CE17B7 /* AppDelegate.swift in Sources */,
 				9EF4E3792AFCB2CD00CE17B7 /* CutomItemViewController.swift in Sources */,
+				9E1766062B01C023000B2121 /* SectionsViewController.swift in Sources */,
 				9EF4E3812AFCB2E700CE17B7 /* EditingViewController.swift in Sources */,
 				9EF4E3FE2AFDF60900CE17B7 /* MaterialColorDataSource.swift in Sources */,
 				9E29F8722AFE7B9A0035E8D2 /* HeaderCollectionReusableView.swift in Sources */,
@@ -470,6 +492,7 @@
 				9EF4E3732AFCB2BA00CE17B7 /* BasicViewController.swift in Sources */,
 				9E6C0E632AFFD33C00D84AE5 /* UpdateHandlerViewController.swift in Sources */,
 				9E60DB512B0075D20060CD62 /* SecondaryFlowLayoutViewController.swift in Sources */,
+				9E17660D2B01C9DF000B2121 /* TwoSectionsViewController.swift in Sources */,
 				9E29F8702AFE74130035E8D2 /* CustomCell.swift in Sources */,
 				9E6C0E5F2AFFC7EE00D84AE5 /* CellRagistrationViewController.swift in Sources */,
 				9E0F9A512AFF8BF100799424 /* ReorderingViewController.swift in Sources */,
@@ -477,6 +500,7 @@
 				9E0F9A552AFFB65200799424 /* Landscape.swift in Sources */,
 				9E60DB572B0098290060CD62 /* HeaderRegistrationViewController.swift in Sources */,
 				9EF4E3562AFCB1BE00CE17B7 /* SceneDelegate.swift in Sources */,
+				9E1766042B01C003000B2121 /* ApplicationSectionData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
