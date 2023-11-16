@@ -51,4 +51,4 @@ struct ApplicationSectionData {
         items.append(contentsOf: [FoodsData("Yogurt", "yogurt", 59, false, "Y")])
     }
 }
-var appSectionData: ApplicationSectionData = ApplicationSectionData()
+var AppSectionData = ApplicationSectionData()

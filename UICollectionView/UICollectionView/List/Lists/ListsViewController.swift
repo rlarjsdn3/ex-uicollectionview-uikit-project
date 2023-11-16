@@ -11,21 +11,19 @@ class ListsViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var appData = ApplicationSectionData()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         var config = UICollectionLayoutListConfiguration(appearance: .grouped)
         config.headerMode = .supplementary
         config.separatorConfiguration.color = UIColor.systemRed
         // ⭐️ 각 셀마다 저마다 다른 구분선 스타일을 적용함.
-        config.itemSeparatorHandler = { [unowned  self] indexPath, config in
+        config.itemSeparatorHandler = { indexPath, config in
             let row = indexPath.item
             let section = indexPath.section
             
             var lastRow = 0
-            if let sectionID = appData.dataSource.sectionIdentifier(for: section) {
-                lastRow = appData.dataSource.snapshot().numberOfItems(inSection: sectionID)
+            if let sectionID = AppSectionData.dataSource.sectionIdentifier(for: section) {
+                lastRow = AppSectionData.dataSource.snapshot().numberOfItems(inSection: sectionID)
                 lastRow = lastRow > 0 ? lastRow - 1 : 0 // 셀은 인덱스 0부터 시작하므로 -1을 빼줌.
             }
             var configuration = config
@@ -34,6 +32,26 @@ class ListsViewController: UIViewController {
             // 각 섹션의 마지막 셀의 하단 구분선 지우기
             configuration.bottomSeparatorVisibility = row == lastRow ? .hidden : .automatic
             return configuration
+        }
+        // ⭐️ 후행 스와이프 액션 버튼을 구현함.
+        config.trailingSwipeActionsConfigurationProvider = { indexPath in
+            let button = UIContextualAction(style: .normal, title: "Remove") { action, view, completion in
+                if let itemID = AppSectionData.dataSource.itemIdentifier(for: indexPath),
+                   let sectionID  = AppSectionData.dataSource.sectionIdentifier(for: indexPath.section) {
+                    AppSectionData.items.removeAll(where: { $0.id == itemID })
+                    
+                    var currentSnapshot = AppSectionData.dataSource.snapshot()
+                    currentSnapshot.deleteItems([itemID])
+                    if currentSnapshot.numberOfItems(inSection: sectionID) <= 0 {
+                        AppSectionData.sections.removeAll(where: { $0.id == sectionID })
+                        currentSnapshot.deleteSections([sectionID])
+                    }
+                    AppSectionData.dataSource.apply(currentSnapshot)
+                }
+                completion(true)
+            }
+            let config = UISwipeActionsConfiguration(actions: [button])
+            return config
         }
         
         var layout = UICollectionViewCompositionalLayout.list(using: config)
@@ -45,8 +63,8 @@ class ListsViewController: UIViewController {
     }
     
     func prepareDatasource() {
-        let cellRegistration = UICollectionView.CellRegistration<UICollectionViewListCell, FoodsData.ID> { [unowned self] cell, indexPath, itemID in
-            if let item = appData.items.first(where: { $0.id == itemID }) {
+        let cellRegistration = UICollectionView.CellRegistration<UICollectionViewListCell, FoodsData.ID> { cell, indexPath, itemID in
+            if let item = AppSectionData.items.first(where: { $0.id == itemID }) {
                 var contentConfig = cell.defaultContentConfiguration()
                 contentConfig.text = item.name
                 contentConfig.secondaryText = "Calories: \(item.calories)"
@@ -59,29 +77,29 @@ class ListsViewController: UIViewController {
             }
         }
         
-        appData.dataSource = UICollectionViewDiffableDataSource<AlphabetSections.ID, FoodsData.ID>(collectionView: collectionView) { collectionView, indexPath, itemID in
+        AppSectionData.dataSource = UICollectionViewDiffableDataSource<AlphabetSections.ID, FoodsData.ID>(collectionView: collectionView) { collectionView, indexPath, itemID in
             return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: itemID)
         }
         
-        let headerRegistration = UICollectionView.SupplementaryRegistration<ListHeaderView>(elementKind: UICollectionView.elementKindSectionHeader) { [unowned self] supplementaryView, kind, indexPath in
-            supplementaryView.textView.text = appData.sections[indexPath.section].name
+        let headerRegistration = UICollectionView.SupplementaryRegistration<ListHeaderView>(elementKind: UICollectionView.elementKindSectionHeader) { supplementaryView, kind, indexPath in
+            supplementaryView.textView.text = AppSectionData.sections[indexPath.section].name
         }
         
-        appData.dataSource.supplementaryViewProvider = { collectionView, kind, indexPath in
+        AppSectionData.dataSource.supplementaryViewProvider = { collectionView, kind, indexPath in
             return collectionView.dequeueConfiguredReusableSupplementary(using: headerRegistration, for: indexPath)
         }
     }
     
     func prepareSnapshot() {
         var snapshot = NSDiffableDataSourceSnapshot<AlphabetSections.ID, FoodsData.ID>()
-        snapshot.appendSections(appData.sections.map { $0.id })
-        for section in appData.sections {
-            let itemIDs = appData.items.compactMap { value in
+        snapshot.appendSections(AppSectionData.sections.map { $0.id })
+        for section in AppSectionData.sections {
+            let itemIDs = AppSectionData.items.compactMap { value in
                 return value.section == section.name ? value.id : nil
             }
             snapshot.appendItems(itemIDs, toSection: section.id)
         }
-        appData.dataSource.apply(snapshot)
+        AppSectionData.dataSource.apply(snapshot)
     }
 
 }
@@ -89,13 +107,13 @@ class ListsViewController: UIViewController {
 extension ListsViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let itemID = appData.dataSource.itemIdentifier(for: indexPath) {
-            if let item = appData.items.first(where: { $0.id == itemID }) {
+        if let itemID = AppSectionData.dataSource.itemIdentifier(for: indexPath) {
+            if let item = AppSectionData.items.first(where: { $0.id == itemID }) {
                 item.selected.toggle()
                 
-                var current = appData.dataSource.snapshot()
+                var current = AppSectionData.dataSource.snapshot()
                 current.reconfigureItems([itemID])
-                appData.dataSource.apply(current)
+                AppSectionData.dataSource.apply(current)
                 
                 collectionView.deselectItem(at: indexPath, animated: true)
             }
